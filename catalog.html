@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Gallery - Searchable</title>
+  <style>
+    /* Add this to your existing style.css file */
+
+.search-container {
+  text-align: center;
+  margin: 20px;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+  </style>
 </head>
 <body>
-    <section class="car-container">
-        <div class="container1">
-            <div>
-                <img src="" alt="">
-                <p>
+  <h1>Car Gallery - 48 Cars</h1>
 
-                </p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <p>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search by car name..." />
+  </div>
 
-                </p>
-            </div>
-            <div>
-                <img src="" alt="">
-                <p>
+  <div class="car-container" id="carContainer">
+    <!-- Example Car Card -->
+    <div class="car-card">
+      <img src="https://via.placeholder.com/300x200" alt="Tesla Model S" />
+      <h2>Tesla Model S</h2>
+      <p>Electric sedan with futuristic design.</p>
+    </div>
 
-                </p>
-            </div>
-            <div>
-                <img src=" " alt="">
-                <p>
-                    
-                </p>
-            </div>
-        </div>
-        <div class="container2">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </section>
+    <div class="car-card">
+      <img src="https://via.placeholder.com/300x200" alt="Bugatti Chiron" />
+      <h2>Bugatti Chiron</h2>
+      <p>High-performance luxury hypercar.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="https://via.placeholder.com/300x200" alt="Ford Mustang" />
+      <h2>Ford Mustang</h2>
+      <p>Classic American muscle car.</p>
+    </div>
+
+    <!-- Add more car cards here... -->
+  </div>
+
+  <script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+  const query = this.value.toLowerCase();
+  const cards = document.querySelectorAll('.car-card');
+
+  cards.forEach(card => {
+    const carName = card.querySelector('h2').textContent.toLowerCase();
+    if (carName.includes(query)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
+  </script>
 </body>
 </html>

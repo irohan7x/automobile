@@ -16,7 +16,7 @@ header{
     z-index: 3;
     color: white;
     display: flex;
-    gap: 10px;
+    
 }
 .logo{
     border-radius: 50%;
@@ -33,7 +33,7 @@ nav ul{
 nav{
   display: flex;
   margin-top: 30px;
-  margin-left: 29%;
+  margin-left: 49%;
   
 }
 nav ul li a {
@@ -252,6 +252,21 @@ input[type="email"] {
 .social-icons a:hover {
 color : black;
 padding: 5px;
+}
+/* Add this to your existing style.css file */
+
+.search-container {
+  text-align: center;
+  margin: 20px;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 
