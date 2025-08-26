@@ -5,23 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .login-page{
+        body{
+            background-image: url(https://wallpapers.com/images/hd/tata-motors-3840-x-2160-wallpaper-h2o2nzr437h6s55b.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;        
+        }
+        .login-container{
             display: block;
-            max-width: 500px;
+            max-width: 400px;
             text-align: center;
             margin: 100px auto;
-            border: 2px solid black;
+            border: 2px solid rgb(225, 134, 134);
             padding: 20px;
+            background-color: transparent;
+            backdrop-filter: blur(20px);
+            /* height: 234px; */
+            border-radius: 10px;
+            box-shadow: 0 8px 10px rgb(49, 48, 48);
+        }
+        .login-child{
+            padding: 10px;
+            border: none;
+            width: 90%;
+        }
+        input{
+                width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+        }
+        button{
+            padding: 10px;
+            width: 50%;
+            border-radius: 30px;
+            border: 2px solid rgb(56, 55, 55);
+            background-color: rgb(206, 190, 181);
+        }
+        .check{
+            
         }
     </style>
 </head>
 <body>
+    
     <div class="login-container">
         <h2>Login</h2>
       <form id="loginForm">
-         <input type="Email" id="Email" placeholder="Enter your Email" required>
-        <input type="Password" id="password" placeholder="enter your password" required>
-          <button class="submit" type="submit">submit</button>    
+        <div class="login-child">
+         <input type="text" id="Email" placeholder="Enter your Email" required> 
+         <span id="email-error" class="email-error"></span>
+         </div>
+          <div class="login-child">
+         <input type="password" id="password" placeholder="Enter Password" required> 
+         <span id="password" class="password"></span>
+         </div>
+         <div class="check">
+            <input type="checkbox" class="checkbox">All Terms & condition
+         </div>
+         <button type="submit">Login</button>
         </form>
     </div>
 </body>
