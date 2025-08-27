@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            background-image: url(https://wallpapers.com/images/hd/tata-motors-3840-x-2160-wallpaper-h2o2nzr437h6s55b.jpg);
+        
+ body{
+            background-image: url(https://www.hdcarwallpapers.com/download/tata_curvv_concept_2024-3840x2160.jpg);
             background-repeat: no-repeat;
             background-size: cover;        
         }
@@ -28,11 +29,11 @@
             border: none;
             width: 90%;
         }
-        input{
-                width: 100%;
-    padding: 8px;
-    border-radius: 10px;
-        }
+        #username, #password{
+            width: 90%;
+            padding: 10px;
+            border-radius: 10px;
+        }  
         button{
             padding: 10px;
             width: 50%;
@@ -40,10 +41,23 @@
             border: 2px solid rgb(56, 55, 55);
             background-color: rgb(206, 190, 181);
         }
-        .checkbox-forget{
+        .remember-forgot{
             display: flex;
-            justify-content: space-between
-            ;
+            justify-content: space-between ;
+            margin-bottom: 10px;
+            color: azure;
+        }
+        h2{
+            text-align: center;
+            color: beige;
+        }
+        button{
+         margin-left: 25%;
+        }
+        .register{
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
         }
     </style>
 </head>
@@ -53,22 +67,41 @@
         <h2>Login</h2>
       <form id="loginForm">
         <div class="login-child">
-         <input type="text" id="Email" placeholder="Enter your Email" required>
-         <span id="email-error" class="email-error"></span>
+         <input type="text" id="username" placeholder="Enter your username" required>
+        
          </div>
           <div class="login-child">
          <input type="password" id="password" placeholder="Enter Password" required>
-         <span id="password" class="password"></span>
          </div>
-         <div class="checkbox-forget">
-            <label>
-            <input type="checkbox">
-            "remember me"
-            </label>
-            <a href="#">forgot password</a>
-         </div>
+          <div class="remember-forgot">
+              <label>  <input type="checkbox">remember me</label>
+                <a href ="#">Forgot Password?</a>
+            </div>
          <button type="submit">Login</button>
+         <div class="register">
+            don't have account?<a href="#">Register</a>
+         </div>
         </form>
     </div>
 </body>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  // Simple validation
+  if (username === "" || password === "") {
+    alert("Please enter both username and password.");
+    return;
+  }
+
+  // You can store users in localStorage here if needed
+
+  // Simulate successful login
+  alert("Login successful! Redirecting...");
+  window.webpage1.href = "catalog.html";
+});
+</script>
 </html>
