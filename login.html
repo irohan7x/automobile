@@ -11,9 +11,9 @@
             background-size: cover;        
         }
         .login-container{
-            display: block;
+            /* display: block; */
             max-width: 400px;
-            text-align: center;
+            /* text-align: center; */
             margin: 100px auto;
             border: 2px solid rgb(225, 134, 134);
             padding: 20px;
@@ -40,8 +40,10 @@
             border: 2px solid rgb(56, 55, 55);
             background-color: rgb(206, 190, 181);
         }
-        .check{
-            
+        .checkbox-forget{
+            display: flex;
+            justify-content: space-between
+            ;
         }
     </style>
 </head>
@@ -51,15 +53,19 @@
         <h2>Login</h2>
       <form id="loginForm">
         <div class="login-child">
-         <input type="text" id="Email" placeholder="Enter your Email" required> 
+         <input type="text" id="Email" placeholder="Enter your Email" required>
          <span id="email-error" class="email-error"></span>
          </div>
           <div class="login-child">
-         <input type="password" id="password" placeholder="Enter Password" required> 
+         <input type="password" id="password" placeholder="Enter Password" required>
          <span id="password" class="password"></span>
          </div>
-         <div class="check">
-            <input type="checkbox" class="checkbox">All Terms & condition
+         <div class="checkbox-forget">
+            <label>
+            <input type="checkbox">
+            "remember me"
+            </label>
+            <a href="#">forgot password</a>
          </div>
          <button type="submit">Login</button>
         </form>
