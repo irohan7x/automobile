@@ -135,6 +135,9 @@ section{
 
   
   <script>
+    document.querySelectorAll('navbar a').addEventListener('click', function(){
+     const targetId = this
+    });
     document.getElementById('searchInput').addEventListener('input', function () {
   const query = this.value.toLowerCase();
   const cards = document.querySelectorAll('.car-card');
