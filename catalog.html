@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Gallery with Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 50%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .car-container {
+      display: flex;  
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      
+    }
+    .car {
+      width: 500px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .car:hover {
+      transform: scale(1.02);
+    }
+    .car img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .car h3 {
+      margin: 10px 0 5px;
+    }
+    .car p {
+      margin: 2px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome To The Car Gallery</h1>
+  <input type="text" id="searchBar" placeholder="Search for a car..." />
+
+  <div class="car-container" id="carContainer"></div>
+  <img src="./car/hyundai/i20.jpg" alt="">
+
+  <script>
+    const cars = [
+      { name: "Alto", img: "./car/maruti/alto.png", year: 2023, type: "Sports", price: "$280,000" },
+      { name: "Breeza", img: "./car/maruti/breeza.jpg", year: 2022, type: "Sports", price: "$310,000" },
+      { name: "Celerio", img: "./car/maruti/celerio.png", year: 2024, type: "Coupe", price: "$150,000" },
+      { name: "Tesla Model S", img: "./car/maruti/ciaz.png", year: 2024, type: "Sedan", price: "$85,000" },
+      { name: "BMW X5", img: "./car/maruti/ertiga.png", year: 2023, type: "SUV", price: "$75,000" },
+      { name: "Audi A6", img: "./car/maruti/fronx.png", year: 2022, type: "Sedan", price: "$60,000" },
+      { name: "Mercedes-Benz GLE", img: "./car/maruti/grand-vitara-.webp", year: 2023, type: "SUV", price: "$80,000" },
+      { name: "Bugatti Chiron", img: "./car/maruti/maruti-suzuki-baleno-luxe-beige.png", year: 2021, type: "Hypercar", price: "$3,000,000" },
+      { name: "Rolls Royce Phantom", img: "./car/maruti/swift.jpg", year: 2022, type: "Luxury", price: "$450,000" },
+      { name: "Bentley Continental", img: "./car/maruti/wagnor.png", year: 2023, type: "Luxury", price: "$220,000" },
+      { name: "Chevrolet Camaro", img: "./car/hyundai/aura.png", year: 2021, type: "Muscle", price: "$45,000" },
+      { name: "Ford Mustang", img: "./car/hyundai/creta.jpg", year: 2023, type: "Muscle", price: "$50,000" },
+      { name: "Toyota Supra", img: "./car/hyundai/exter.png", year: 2022, type: "Sports", price: "$55,000" },
+      { name: "Honda Civic", img: "./car/hyundai/i20.jpg", year: 2023, type: "Sedan", price: "$25,000" },
+      { name: "Nissan GT-R", img: "https://via.placeholder.com/200x120?text=GT-R", year: 2022, type: "Sports", price: "$115,000" },
+      { name: "Mazda MX-5", img: "https://via.placeholder.com/200x120?text=MX-5", year: 2024, type: "Convertible", price: "$32,000" },
+      { name: "Kia Seltos", img: "https://via.placeholder.com/200x120?text=Seltos", year: 2023, type: "SUV", price: "$22,000" },
+      { name: "Hyundai Sonata", img: "https://via.placeholder.com/200x120?text=Sonata", year: 2024, type: "Sedan", price: "$28,000" },
+      { name: "Subaru Forester", img: "https://via.placeholder.com/200x120?text=Forester", year: 2023, type: "SUV", price: "$30,000" },
+      { name: "Volvo XC90", img: "https://via.placeholder.com/200x120?text=XC90", year: 2022, type: "SUV", price: "$72,000" },
+      { name: "Jeep Wrangler", img: "https://via.placeholder.com/200x120?text=Wrangler", year: 2023, type: "SUV", price: "$45,000" },
+      { name: "Dodge Charger", img: "https://via.placeholder.com/200x120?text=Charger", year: 2022, type: "Muscle", price: "$40,000" },
+      { name: "Chrysler 300", img: "https://via.placeholder.com/200x120?text=Chrysler", year: 2021, type: "Sedan", price: "$35,000" },
+      { name: "GMC Yukon", img: "https://via.placeholder.com/200x120?text=Yukon", year: 2023, type: "SUV", price: "$65,000" },
+      { name: "Mini Cooper", img: "https://via.placeholder.com/200x120?text=Mini", year: 2022, type: "Hatchback", price: "$28,000" },
+      { name: "Peugeot 3008", img: "https://via.placeholder.com/200x120?text=Peugeot", year: 2023, type: "SUV", price: "$33,000" },
+      { name: "Renault Clio", img: "https://via.placeholder.com/200x120?text=Renault", year: 2024, type: "Hatchback", price: "$21,000" },
+      { name: "Skoda Octavia", img: "https://via.placeholder.com/200x120?text=Skoda", year: 2023, type: "Sedan", price: "$29,000" },
+      { name: "Fiat 500", img: "https://via.placeholder.com/200x120?text=Fiat+500", year: 2022, type: "Compact", price: "$20,000" },
+      { name: "Citroen C5", img: "https://via.placeholder.com/200x120?text=Citroen", year: 2023, type: "SUV", price: "$34,000" }
+    ];
+
+    const carContainer = document.getElementById('carContainer');
+    const searchBar = document.getElementById('searchBar');
+
+    function displayCars(filteredCars) {
+      carContainer.innerHTML = "";
+      filteredCars.map(car => {
+        const carDiv = document.createElement("div");
+        carDiv.className = "car";
+        carDiv.innerHTML = `
+          <img src="${car.img}" alt="${car.name}" />
+          <h3>${car.name}</h3>
+          <p><strong>Year:</strong> ${car.year}</p>
+          <p><strong>Type:</strong> ${car.type}</p>
+          <p><strong>Price:</strong> ${car.price}</p>
+        `;
+        carContainer.appendChild(carDiv);
+      });
+    }
+
+    searchBar.addEventListener('input', (e) => {
+      const searchValue = e.target.value.toLowerCase();
+      const filtered = cars.filter(car => car.name.toLowerCase().includes(searchValue));
+      displayCars(filtered);
+    });
+
+    // Initial render
+    displayCars(cars);
+  </script>
+</body>
+</html>
