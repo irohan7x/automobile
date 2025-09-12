@@ -55,43 +55,34 @@
 </head>
 <body>
   <h1>Welcome To The Car Gallery</h1>
+  <p>there is a some cars</p>
   <input type="text" id="searchBar" placeholder="Search for a car..." />
 
   <div class="car-container" id="carContainer"></div>
-  <img src="./car/hyundai/i20.jpg" alt="">
+  <img src="./car/mahindra/thar-exterior-right-front-three-quarter-35.avif" alt="">
 
   <script>
     const cars = [
-      { name: "Alto", img: "./car/maruti/alto.png", year: 2023, type: "Sports", price: "$280,000" },
+      { name: "Alto", img: "./car/maruti/altoo.avif", year: 2023, type: "Sports", price: "$280,000" },
       { name: "Breeza", img: "./car/maruti/breeza.jpg", year: 2022, type: "Sports", price: "$310,000" },
       { name: "Celerio", img: "./car/maruti/celerio.png", year: 2024, type: "Coupe", price: "$150,000" },
-      { name: "Tesla Model S", img: "./car/maruti/ciaz.png", year: 2024, type: "Sedan", price: "$85,000" },
-      { name: "BMW X5", img: "./car/maruti/ertiga.png", year: 2023, type: "SUV", price: "$75,000" },
-      { name: "Audi A6", img: "./car/maruti/fronx.png", year: 2022, type: "Sedan", price: "$60,000" },
-      { name: "Mercedes-Benz GLE", img: "./car/maruti/grand-vitara-.webp", year: 2023, type: "SUV", price: "$80,000" },
-      { name: "Bugatti Chiron", img: "./car/maruti/maruti-suzuki-baleno-luxe-beige.png", year: 2021, type: "Hypercar", price: "$3,000,000" },
-      { name: "Rolls Royce Phantom", img: "./car/maruti/swift.jpg", year: 2022, type: "Luxury", price: "$450,000" },
-      { name: "Bentley Continental", img: "./car/maruti/wagnor.png", year: 2023, type: "Luxury", price: "$220,000" },
-      { name: "Chevrolet Camaro", img: "./car/hyundai/aura.png", year: 2021, type: "Muscle", price: "$45,000" },
-      { name: "Ford Mustang", img: "./car/hyundai/creta.jpg", year: 2023, type: "Muscle", price: "$50,000" },
-      { name: "Toyota Supra", img: "./car/hyundai/exter.png", year: 2022, type: "Sports", price: "$55,000" },
-      { name: "Honda Civic", img: "./car/hyundai/i20.jpg", year: 2023, type: "Sedan", price: "$25,000" },
-      { name: "Nissan GT-R", img: "https://via.placeholder.com/200x120?text=GT-R", year: 2022, type: "Sports", price: "$115,000" },
-      { name: "Mazda MX-5", img: "https://via.placeholder.com/200x120?text=MX-5", year: 2024, type: "Convertible", price: "$32,000" },
-      { name: "Kia Seltos", img: "https://via.placeholder.com/200x120?text=Seltos", year: 2023, type: "SUV", price: "$22,000" },
-      { name: "Hyundai Sonata", img: "https://via.placeholder.com/200x120?text=Sonata", year: 2024, type: "Sedan", price: "$28,000" },
-      { name: "Subaru Forester", img: "https://via.placeholder.com/200x120?text=Forester", year: 2023, type: "SUV", price: "$30,000" },
-      { name: "Volvo XC90", img: "https://via.placeholder.com/200x120?text=XC90", year: 2022, type: "SUV", price: "$72,000" },
-      { name: "Jeep Wrangler", img: "https://via.placeholder.com/200x120?text=Wrangler", year: 2023, type: "SUV", price: "$45,000" },
-      { name: "Dodge Charger", img: "https://via.placeholder.com/200x120?text=Charger", year: 2022, type: "Muscle", price: "$40,000" },
-      { name: "Chrysler 300", img: "https://via.placeholder.com/200x120?text=Chrysler", year: 2021, type: "Sedan", price: "$35,000" },
-      { name: "GMC Yukon", img: "https://via.placeholder.com/200x120?text=Yukon", year: 2023, type: "SUV", price: "$65,000" },
-      { name: "Mini Cooper", img: "https://via.placeholder.com/200x120?text=Mini", year: 2022, type: "Hatchback", price: "$28,000" },
-      { name: "Peugeot 3008", img: "https://via.placeholder.com/200x120?text=Peugeot", year: 2023, type: "SUV", price: "$33,000" },
-      { name: "Renault Clio", img: "https://via.placeholder.com/200x120?text=Renault", year: 2024, type: "Hatchback", price: "$21,000" },
-      { name: "Skoda Octavia", img: "https://via.placeholder.com/200x120?text=Skoda", year: 2023, type: "Sedan", price: "$29,000" },
-      { name: "Fiat 500", img: "https://via.placeholder.com/200x120?text=Fiat+500", year: 2022, type: "Compact", price: "$20,000" },
-      { name: "Citroen C5", img: "https://via.placeholder.com/200x120?text=Citroen", year: 2023, type: "SUV", price: "$34,000" }
+      { name: "Ciaz", img: "./car/maruti/ciaz_600x400.avif", year: 2024, type: "Sedan", price: "$85,000" },
+      { name: "Ertiga", img: "./car/maruti/ertiga.png", year: 2023, type: "SUV", price: "$75,000" },
+      { name: "Fronx", img: "./car/maruti/fronx.png", year: 2022, type: "Sedan", price: "$60,000" },
+      { name: "Vitara", img: "./car/maruti/grand-vitara-.webp", year: 2023, type: "SUV", price: "$80,000" },
+      { name: "Baleno", img: "./car/maruti/maruti-suzuki-baleno-luxe-beige.png", year: 2021, type: "Hypercar", price: "$3,000,000" },
+      { name: "Dzire", img: "./car/maruti/dzire.jpg", year: 2022, type: "Luxury", price: "$450,000" },
+      { name: "Wgnor", img: "./car/maruti/wagnor.png", year: 2023, type: "Luxury", price: "$220,000" },
+      { name: "Aura", img: "./car/hyundai/20250430054939_Hyundai_Aura_Aqua_Teal[1].avif", year: 2021, type: "Muscle", price: "$45,000" },
+      { name: "Creta", img: "./car/hyundai/New_Creta.webp", year: 2023, type: "Muscle", price: "$50,000" },
+      { name: "Exter", img: "./car/hyundai/Exter_Feature_Image_05a35e2bdf.png", year: 2022, type: "Sports", price: "$55,000" },
+      { name: "i20", img: "./car/hyundai/i200.png", year: 2023, type: "Sedan", price: "$25,000" },
+      { name: "Venue", img: "./car/hyundai/hyundai-venue-denim-blue.png", year: 2022, type: "Sports", price: "$115,000" },
+      { name: "Verna", img: "./car/hyundai/verna.avif", year: 2024, type: "Convertible", price: "$32,000" },
+      { name: "Bolero", img: "./car/mahindra/bolero-exterior-right-front-three-quarter-2.avif", year: 2023, type: "Sports", price: "$280,000" },
+      { name: "Scorpio", img: "./car/mahindra/16406334913269.png", year: 2023, type: "Sports", price: "$280,000" },
+      { name: "Scorpio N", img: "./car/mahindra/scorpio n.webp", year: 2023, type: "Sports", price: "$280,000" },
+      { name: "thar", img: "./car/mahindra/thar-exterior-right-front-three-quarter-35.avif", year: 2023, type: "Sports", price: "$280,000" },
     ];
 
     const carContainer = document.getElementById('carContainer');
